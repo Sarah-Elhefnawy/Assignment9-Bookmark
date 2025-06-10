@@ -21,7 +21,7 @@ function addBookmark() {
     allBookmarks.push(site);
     localStorage.setItem("allBookmarks", JSON.stringify(allBookmarks));
     display();
-    // clearData();
+    clearData();
 }
 
 function display() {
