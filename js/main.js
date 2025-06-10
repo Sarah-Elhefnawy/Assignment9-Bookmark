@@ -3,6 +3,7 @@ var siteUrl = document.getElementById("siteUrl");
 var tr = document.getElementById("tr");
 var nameAlert = document.getElementById("nameAlert");
 var urlAlert = document.getElementById("urlAlert");
+var modal = document.getElementById('modal');
 
 
 var allBookmarks = [];
@@ -89,29 +90,22 @@ function validateUrl() {
 function testValidation() {
     if (validateName() && validateUrl()) {
         addBookmark();
-        // console.log(modal.ariaModal = "true");
-        siteName.classList.remove("is-valid");
-        siteUrl.classList.remove("is-valid");
-        siteName.classList.remove("is-invalid");
-        siteUrl.classList.remove("is-invalid");
-        btnClick();
-        if (modal.ariaModal = "true") {
-            console.log("hiiiiii");
-            btnClick();
-            //         true
-            // console.log(modal.ariaModal);
-            // console.log(closeModal.click());
-        }
+        siteName.classList.remove("is-valid", "is-invalid");
+        siteUrl.classList.remove("is-valid", "is-invalid");
+        nameAlert.classList.add("d-none");
+        urlAlert.classList.add("d-none");
+        hideModal();
+    } else {
+        // var bootstrapModal = new bootstrap.Modal(document.getElementById('modal'));
+        // bootstrapModal.show();
+        showModal();
     }
 }
-//      null
-// console.log(modal.ariaModal);
-var closeModal = document.querySelector('.btn-close[data-bs-dismiss="modal"]');
-var modal = document.getElementById("modal");
-// const modalInstance = bootstrap.Modal.getInstance(modal);
-function btnClick() {
-       closeModal.click();
-    // modalInstance.hide();
+
+function showModal() {
+    modal.classList.add('show');
 }
 
-
+function hideModal() {
+    modal.classList.remove('show');
+}
