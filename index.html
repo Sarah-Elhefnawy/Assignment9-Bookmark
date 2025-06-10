@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/media.css">
+    <title>Bookmark</title>
+</head>
+
+<body>
+    <main>
+        <div class="container">
+            <div class="inner">
+                <h1>Bookmarker</h1>
+                <div class="main-form w-100 p-3 py-4 mt-5 d-flex flex-column gap-4">
+                    <h2> Bookmark your favorite sites </h2>
+                    <div>
+                        <label for="siteName">Site Name</label>
+                        <input class="form-control mb-3" oninput="validateName()" type="text" name="SiteName"
+                            id="siteName" placeholder="Bookmark Name">
+                        <div id="nameAlert" class="alert alert-danger mb-4 d-none" role="alert">
+                            Minimum 3 Characters
+                        </div>
+                        <label for="siteUrl">Site URL</label>
+                        <input class="form-control mb-3" oninput="validateUrl()" type="url" name="SiteUrl" id="siteUrl"
+                            placeholder="Website URL">
+                        <div id="urlAlert" class="alert alert-danger mb-4 d-none" role="alert">
+                            Invalid URL
+                        </div>
+                        <button onclick="testValidation()" class="btn btn-submit" data-bs-target="#modal" data-bs-toggle="modal">Submit</button>
+                        <!-- <button onclick="testValidation()" class="btn btn-submit">Submit</button> -->
+                    </div>
+                </div>
+
+                <table class="table bg-light text-center mt-4">
+                    <thead>
+                        <tr class="text-capitalize fw-bold p-2">
+                            <th>Index</th>
+                            <th>Website Name</th>
+                            <th>Visit</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tr"></tbody>
+                </table>
+            </div>
+        </div>
+        <div class="warning-box modal fade" id="modal" tabindex="-1" aria-labelledby="modalLable" aria-hidden='true'>
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="box-header">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Site Name or Url is not valid, Please follow the rules below :</p>
+                        <ol class="list-unstyled rules">
+                            <li>Site name must contain at least 3 characters</li>
+                            <li>Site URL must be a valid one</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

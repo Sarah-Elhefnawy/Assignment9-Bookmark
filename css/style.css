@@ -1,0 +1,227 @@
+:root {
+    --bs-table-bg: #F8F9FA;
+    --main-color: #FEC260;
+    --btn-submit-color: #d1512d;
+    --btn-visit-color: #9eb23b;
+    --btn-delete-color: #eb1d36;
+    --main-text-color: #212529;
+    --secondary-text-color: #352e28;
+    --bg-main-color: #fff;
+    --warning-icons: #bb4120;
+}
+
+::selection {
+    background: var(--main-color);
+    color: var(--main-text-color);
+}
+
+@font-face {
+    font-family: primary;
+    src: url(./../fonts/PT_Sans_Caption/PTSansCaption-Regular.ttf);
+}
+
+@font-face {
+    font-family: h1;
+    src: url(./../fonts/Pacifico/Pacifico-Regular.ttf);
+}
+
+@font-face {
+    font-family: h2;
+    src: url(./../fonts/Righteous/Righteous-Regular.ttf);
+}
+
+body {
+    background-color: #F7ECDE;
+    color: var(--main-text-color);
+    font-family: primary, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    padding: 48px 0;
+}
+
+h1 {
+    color: var(--secondary-text-color);
+    font-family: h1, cursive;
+    font-size: 50px;
+    line-height: 60px;
+    margin-bottom: 8px;
+    padding: 8px 0;
+    font-weight: 500;
+    position: relative;
+    width: fit-content;
+    margin: auto;
+}
+
+h1::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+    background-color: var(--main-color);
+    width: 100%;
+    height: 25%;
+    z-index: -1;
+    transition: height 0.5s ease;
+    -webkit-transition: height 0.5s ease;
+    -moz-transition: height 0.5s ease;
+    -ms-transition: height 0.5s ease;
+    -o-transition: height 0.5s ease;
+}
+
+h1:hover::before {
+    height: 50%;
+}
+
+.main-form {
+    border-width: 2px 0px;
+    border-style: dotted;
+    border-color: var(--secondary-text-color);
+}
+
+h2 {
+    font-family: h2, cursive;
+    background-image: linear-gradient(to right, #3ca55c, #b5ac49);
+    background-clip: text;
+    color: transparent;
+    font-size: 25px;
+    line-height: 30px;
+    margin-bottom: 8px;
+    font-weight: 500;
+    text-align: center;
+}
+
+h2::after,
+h2::before {
+    content: "\f02e";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+}
+
+label {
+    font-size: 16px;
+    font-weight: 600;
+    padding-bottom: 8px;
+}
+
+label[for="siteName"]::before {
+    content: "\e0bb";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    margin-right: .625rem;
+}
+
+label[for="siteUrl"]::before {
+    content: "\f0c1";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    margin-right: .625rem;
+}
+
+input.form-control:focus {
+    border-color: var(--main-color);
+    box-shadow: 0 0 0 .25rem rgba(217, 156, 57, 0.22);
+}
+
+.btn-submit {
+    padding: 6px 48px;
+    --bs-btn-color: var(--bg-main-color);
+    --bs-btn-bg: var(--btn-submit-color);
+    --bs-btn-border-color: var(--btn-submit-color);
+    --bs-btn-hover-color: var(--bg-main-color);
+    --bs-btn-hover-bg: var(--warning-icons);
+    --bs-btn-hover-border-color: #a03315;
+    display: block;
+    margin: auto;
+}
+
+table {
+    vertical-align: middle !important;
+}
+
+a.btn-visit {
+    --bs-btn-color: var(--bg-main-color);
+    --bs-btn-bg: var(--btn-visit-color);
+    --bs-btn-border-color: var(--btn-visit-color);
+    --bs-btn-hover-color: var(--bg-main-color);
+    --bs-btn-hover-bg: #8a9e23;
+    --bs-btn-hover-border-color: #6e8018;
+    padding: 6px 12px;
+    width: fit-content;
+    text-indent: 0px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+a.btn-visit::before {
+    content: "\f06e";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    padding-right: 5px;
+}
+
+button.btn-delete {
+    --bs-btn-color: var(--bg-main-color);
+    --bs-btn-bg: var(--btn-delete-color);
+    --bs-btn-border-color: var(--btn-delete-color);
+    --bs-btn-hover-color: var(--bg-main-color);
+    --bs-btn-hover-bg: #d30820;
+    --bs-btn-hover-border-color: #ba081d;
+    padding: 6px 12px;
+    text-indent: 0px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+button.btn-delete::before {
+    content: "\f2ed";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    padding-right: 5px;
+}
+
+.warning-box {
+    font-family: "Bree Serif",serif;
+    color: var(--secondary-text-color);
+    font-size: 21px;
+    line-height: 27.3px;
+    font-weight: 400;
+}
+
+.warning-box .modal-header {
+    border-bottom: 0px;
+}
+
+.warning-box .box-header span {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 6px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.warning-box .box-header span:nth-child(1) {
+    background-color: #f15f5d;
+}
+
+.warning-box .box-header span:nth-child(2) {
+    background-color: #febe2e;
+}
+
+.warning-box .box-header span:nth-child(3) {
+    background-color: #4db748;
+}
+
+.warning-box ol li::before {
+    content: "\f35a";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    padding-right: 5px;
+    color: var(--warning-icons);
+}
